@@ -3,18 +3,16 @@ const path = require('node:path');
 const url = require('node:url');
 const fs = require('node:fs');
 const http = require('http');
-const socketio = require('socket.io');
 const express = require('express')();
 const server = http.createServer(express);
+
 const DataStore = require('./lib/data-store');
+const SocketIO = require('./lib/socket');
 
 const createServer = () => {
 	const dataStore = new DataStore(app.getPath('documents'));
+	const socket = new SocketIO(server, dataStore);
 
-	const io = socketio(server);
-	io.on('connection', () => {
-		console.log('Client Connected');
-	});
 	server.listen(3000);
 };
 

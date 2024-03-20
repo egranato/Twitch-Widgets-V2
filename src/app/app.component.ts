@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import { SocketService } from './services/socket.service';
 
 @Component({
   selector: 'app-root',
@@ -9,8 +8,4 @@ import { SocketService } from './services/socket.service';
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })
-export class AppComponent {
-  constructor(private socketService: SocketService) {
-    socketService.messageEvent.subscribe((event) => {})
-  }
-}
+export class AppComponent {}

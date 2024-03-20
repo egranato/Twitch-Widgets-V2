@@ -1,0 +1,17 @@
+<div class="page">
+  <h5>Configure</h5>
+  <div class="divider"></div>
+  <div class="form-field">
+    <label>Bot Username</label>
+    <input type="text" [(ngModel)]="username">
+  </div>
+  <div class="form-field">
+    <label>Bot Token</label>
+    <input type="password" [(ngModel)]="password">
+  </div>
+  <div class="form-field">
+    <label>Channel Name</label>
+    <input type="text" [(ngModel)]="channel">
+  </div>
+  <button class="primary" (click)="connect()">Connect</button>
+</div>
